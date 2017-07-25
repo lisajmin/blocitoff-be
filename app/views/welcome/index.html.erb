@@ -1,3 +1,17 @@
-<h1>Blocitoff</h1>
-<p>Manage your todo list and stay accountable</p>
-<%= link_to "Let's get started!", new_user_session_path, :class => 'navbar-link' %>
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Welcome back!</h1>
+      <p>What are you waiting for?</p>
+      <h4>Check out your lists!</h4>
+    </div>
+  </div>
+<% else %>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Blocitoff</h1>
+      <p>Manage your todo list and stay accountable</p>
+      <h4><%= link_to "Let's get started!", new_user_registration_path, :class => 'navbar-link' %></h4>
+    </div>
+  </div>
+<% end %>

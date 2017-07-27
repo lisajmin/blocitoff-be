@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/show'
+
   get 'welcome/index'
 
   get 'welcome/about'

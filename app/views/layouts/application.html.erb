@@ -14,19 +14,19 @@
         <a class="navbar-brand">Blocitoff</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home", welcome_index_path %></li>
-        <li><%= link_to "About", welcome_about_path %></li>
+        <li class="<%= 'active' if current_page?(welcome_index_path) %>"><%= link_to "Home", welcome_index_path %></li>
+        <li class="<%= 'active' if current_page?(welcome_about_path) %>"><%= link_to "About", welcome_about_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to 'Hello, ' + current_user.email, user_show_path, :class => 'navbar-link' %></li>
           <li><%= link_to '<span class= "glyphicon glyphicon-cog"></span> Edit Profile'.html_safe, edit_user_registration_path, :class => 'navbar-link' %></li>
           <li><%= link_to '<span class= "glyphicon glyphicon-log-out"></span> Sign Out'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-          <li class="list-group-item list-group-item-info">Signed in as: <strong><%= current_user.email %></strong></li>
-          <% else %>
-          <li><%= link_to '<span class= "glyphicon glyphicon-log-in"></span> Login'.html_safe, new_user_session_path, :class => 'navbar-link' %></li>
+        <% else %>
           <li><%= link_to '<span class= "glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_registration_path, :class => 'navbar-link' %></li>
-          <% end %>
-        </ul>
+          <li><%= link_to '<span class= "glyphicon glyphicon-log-in"></span> Login'.html_safe, new_user_session_path, :class => 'navbar-link' %></li>
+        <% end %>
+      </ul>
   </div>
 </nav>
 

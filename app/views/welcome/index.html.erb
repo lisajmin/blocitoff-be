@@ -3,7 +3,7 @@
     <div class="jumbotron">
       <h1>Welcome back!</h1>
       <p>What are you waiting for?</p>
-      <h4>Check out your lists!</h4>
+      <h4><%= link_to 'Check out your lists!', user_path(current_user.id) %></h4>
     </div>
   </div>
 <% else %>

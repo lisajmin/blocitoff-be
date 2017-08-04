@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Hey, <%= @user.email %></h1>
+  <h1><%= @user.email %>'s todo list</h1>
   <% if current_user == nil %>
   <% elsif current_user.id == @user.id %>
     <div class="container">

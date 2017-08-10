@@ -20,10 +20,9 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Description</th>
-          <% if current_user.id == @user.id %>
-            <th></th>
-          <% end %>
+          <th style="width:70%">Description</th>
+          <th class="text-center">Created</th>
+          <th class="text-center">Complete</th>
         </tr>
       </thead>
       <% @items.each do |item| %>

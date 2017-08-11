@@ -21,8 +21,10 @@
       <thead>
         <tr>
           <th style="width:70%">Description</th>
-          <th class="text-center">Created</th>
-          <th class="text-center">Complete</th>
+          <th>Created</th>
+          <% if current_user.id == @user.id %>
+            <th class="text-center">Complete</th>
+          <% end %>
         </tr>
       </thead>
       <% @items.each do |item| %>

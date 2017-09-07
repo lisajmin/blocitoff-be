@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(welcome_index_path) %>"><%= link_to "Home", welcome_index_path %></li>
         <% if user_signed_in? %>
-          <li class="<%= 'active' if current_page?(user_path(current_user.id)) %>"><%= link_to "My Tasks", user_path(current_user.id) %></li>
+          <li class="<%= 'active' if current_page?(user_path(current_user.id)) %>"><%= link_to "My List", user_path(current_user.id) %></li>
         <% end %>
         <li class="<%= 'active' if current_page?(welcome_about_path) %>"><%= link_to "About", welcome_about_path %></li>
       </ul>
